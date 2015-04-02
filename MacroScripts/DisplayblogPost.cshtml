@@ -1,0 +1,48 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+	var authorName = "Rachel";
+	var commentCount = "No";
+	var mediaSrc = "";
+	if(Model.uBlogsyPostImage != null){
+		mediaSrc = Model.MediaById(Model.uBlogsyPostImage).umbracoFile;
+	}
+	
+	<div class="col-md-8">
+		<article class="post mb">
+			@if(!String.IsNullOrEmpty(mediaSrc)){
+				mediaSrc = "/stage/" + mediaSrc;
+			<div class="post-pic">
+				<a href="blog-post.html"><img src="@mediaSrc" alt="@Model.uBlogsyContentTitle" class="responsive"/></a>
+			</div>
+			}
+			<div class="box light-color no-border padding-medium">
+				
+				<h1>@Model.uBlogsyContentTitle</h1>
+				<ul class="entry-meta">
+					<li class="entry-date">
+						<umbraco:Item field="uBlogsyPostDate" formatAsDate="true" runat="server" />
+					</li>
+					<li class="entry-author">
+						@authorName
+					</li>
+					<li class="entry-comments">
+						<i class="icon-comment"></i>@commentCount Comments
+					</li>
+				</ul>
+				@if(Model.leadOne.Length > 0){
+					<p class="lead">
+						@Model.leadOne
+					</p>
+				}
+				@if(Model.leadTwo.Length > 0){
+					<h3>@Model.leadTwo</h3>
+				}
+				<p>
+					@Model.uBlogsyContentBody
+				</p>
+			</div>
+		</article>
+
+
+	</div>
+	}

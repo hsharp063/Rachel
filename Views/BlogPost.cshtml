@@ -1,0 +1,61 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Main.cshtml";
+}
+
+section MainContent{
+	<main id="content">
+
+			
+			<section class="pt-medium">
+
+				<div class="container">
+					<div class="row">
+						<umbraco:Macro Alias="DisplayblogPost" runat="server" />
+						<!-- Sidebar -->
+						<aside class="col-md-4 box light-color no-border">
+
+							<section class="widget">
+								<h3>Categories</h3>
+								<nav class="sidebar-menu">
+									<ul>
+										<li><a href="#">Solace of a lonely highway</a></li>
+										<li><a href="#">Write with purpose</a></li>
+										<li><a href="#">Tree on a lake</a></li>
+										<li><a href="#">Don’t stop questioning</a></li>
+										<li><a href="#">Overheard this morning</a></li>
+									</ul>
+								</nav>
+							</section>
+							<section class="widget">
+								<h3>Archives</h3>
+								<nav class="sidebar-menu">
+									<ul>
+										<li><a href="#">March 2014</a></li>
+										<li><a href="#">September 2011</a></li>
+										<li><a href="#">July 2011</a></li>
+										<li><a href="#">June 2011</a></li>
+									</ul>
+								</nav>
+							</section>
+							<section class="widget tag-cloud">
+								<h3>Tag cloud</h3>
+								<a href="#" class="w2">News</a>
+								<a href="#" class="w1">category</a>
+								<a href="#" class="w3">business</a>
+								<a href="#" class="w3">economy</a>
+								<a href="#" class="w1">lolcats</a>
+								<a href="#" class="w2">design</a>
+								<a href="#" class="w2">Videos</a>
+								<a href="#" class="w1">Web</a>
+								<a href="#" class="w3">Photos</a>
+								<a href="#" class="w2">Music</a>
+							</section>
+
+						</aside>
+					</div><!-- row -->
+				</div><!-- container -->
+			</section>
+
+		</main>
+}

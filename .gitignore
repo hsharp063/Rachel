@@ -41,3 +41,16 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+#umbraco files
+.dll
+App_Data/
+images/
+Media/
+js-plugins/
+neko-framework/
+Umbraco/lib/
+Umbraco/assets/
+ajax-porfolio-parts/
+App_Browsers/
+custom-icons/

@@ -1,0 +1,41 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+	var picFolder = Model.Children().Where("nodeTypeAlias = \"HomepageTabs\" ").First();	
+	var pics = picFolder.Children();
+ 
+<section class="text-center main-color ">
+<div class="swiper-tab">
+	@if(pics.Count() > 0){
+		var count = 1;
+		<div class="swiper-engine fullscreen">
+		<div class="swiper-wrapper">
+
+		@foreach(var p in pics){
+			<div class="swiper-slide image-background image-@count">
+			<div class="content-slide">
+				<h2>@p.title</h2>
+				<p>@p.longDescription</p>								
+			</div>
+			</div>
+			count ++;
+		}
+		</div>
+		</div>
+		
+		<div class="tabs btn-group btn-group-justified">
+		@foreach(var p in pics){
+		  <a class="btn active">
+				<h2>@p.title</h2>
+				<p>@p.shortDescription</p>
+			</a>
+		}
+		</div>
+		
+		
+	}else{
+		<h4>Images Coming Soon</h4>
+	}
+</div>
+</section>
+
+}
