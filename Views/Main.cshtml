@@ -23,14 +23,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- CSS ================================================== -->
-
+	<link type="text/css" rel="stylesheet" href="/css/custom.css">
 	<!-- web font  -->
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
 	<!-- Neko framework  -->
-	<link type="text/css" rel="stylesheet" href="/stage/custom-icons/css/custom-icons.css">
-	<link type="text/css" rel="stylesheet" href="/stage/neko-framework/external-plugins/external-plugins.min.css">
-	<link type="text/css" rel="stylesheet" href="/stage/neko-framework/css/layout/neko-framework-layout.css">
-	<link type="text/css" rel="stylesheet" id="color" href="/stage/neko-framework/css/color/neko-framework-color.css">
+	<link type="text/css" rel="stylesheet" href="/custom-icons/css/custom-icons.css">
+	<link type="text/css" rel="stylesheet" href="/neko-framework/external-plugins/external-plugins.min.css">
+	<link type="text/css" rel="stylesheet" href="/neko-framework/css/layout/neko-framework-layout.css">
+	<link type="text/css" rel="stylesheet" id="color" href="/neko-framework/css/color/neko-framework-color.css">
 
 	<!-- Favicons ================================================== -->
 	<link rel="shortcut icon" href="images/favicon.ico">
@@ -39,163 +39,30 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 	<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
 
-	<script src="/stage/neko-framework/external-plugins/modernizr/modernizr.custom.js"></script>
+	<script src="/neko-framework/external-plugins/modernizr/modernizr.custom.js"></script>
 
 </head>
 <body class="activate-appear-animation header-7">
 	<!-- global-wrapper -->
 	<div id="global-wrapper">
-		<header class="menu-header navbar-fixed-top" role="banner">
-			<section id="pre-header">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6 hidden-xs">
-							<ul class="quick-menu">
-								<li><a href="template-site-map.html" class="linkLeft">Site map</a></li>
-								<li><a href="template-about.html">About us</a></li>
-								<li><a href="template-team.html">Our team</a></li>
-								<li><a href="template-contact.html">Contact</a></li>
-							</ul>
-						</div>
-						<div class="col-sm-6 col-xs-12 quick-contact">
-							<div class="contact-phone"> <i class="icon-mobile"></i>615.987.1234 </div>
-							<ul class="social-icons">
-								<li><a href="#" class="rss" title="rss"><i class="icon-glyph-342"></i></a></li>
-								<li><a href="#" class="facebook" title="facebook"><i class="icon-glyph-320"></i></a></li>
-								<li><a href="#" class="twitter" title="twitter"><i class="icon-glyph-339"></i></a></li>
-								<li><a href="#" class="gplus" title="gplus"><i class="icon-glyph-317"></i></a></li>
-								<li><a href="#" class="dribbble" title="dribbble"><i class="icon-dribbble"></i></a></li>
-								<li><a href="#" class="linkedin" title="linkedin"><i class="icon-linkedin"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-			<div class="container">
-				<nav class="navbar navbar-default" role="navigation">
-					<div class="navbar-header">
-						<!-- hamburger button -->
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<!-- / hamburger button -->
-
-						<!-- Logo -->
-						<a class="navbar-brand" href="index.html"><img src="images/main-logo.png" alt="EDENA website template"/></a>
-						<!-- /Logo -->
-					</div>
-					<div class="collapse navbar-collapse">
-						<!-- Main navigation -->
-						@Umbraco.RenderMacro("TopNavigation")
-						<!-- / End main navigation -->
-					</div>
-				</nav>
-			</div>
-		</header>
+		@Umbraco.RenderMacro("Header")
 		<!-- header -->
 		@RenderBody()			
-<!-- footer -->
-		<footer id="main-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="footer-widget">
-							<img src="images/neko-logo.png" alt="latest Little Neko news" id="footerLogo" class="mb-small">
-							<p><a href="http://www.little-neko.com" title="Little Neko, website template creation">Little Neko</a> is a web design and development studio. We build responsive HTML5 and CSS3 templates, integrating best web design practises and up-to-date web technologies to create great user experiences. We love what we do and we hope you do! </p>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="footer-widget">
-							<h3>Latest works</h3>
-							<ul class="list-unstyled works-list">
-								<li>
-									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works1.jpg" alt="works"></a>
-								</li>
-								<li>
-									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works2.jpg" alt="works"></a>
-								</li>
-								<li>
-									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works3.jpg" alt="works"></a>
-								</li>
-								<li>
-									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works4.jpg" alt="works"></a>
-								</li>
-								<li>
-									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works5.jpg" alt="works"></a>
-								</li>
-								<li>
-									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works6.jpg" alt="works"></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="footer-widget">
-							<h3>Little NEKO</h3>
-							<address>
-								<p>
-									@Umbraco.Field("address", recursive:true)<br/>
-									@Umbraco.Field("phoneNumber", recursive:true)<br>
-									<a href='@Umbraco.Field("emailAddress", recursive:true)'>@Umbraco.Field("emailAddress", recursive:true)</a>
-								</p>
-							</address>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="footer-widget">
-							<h3>Follow us, we are social</h3>
-							<ul class="social-icons dark-main-color squared medium">
-								<li>
-									<a href="#" class="rss tips" title="Rss"  data-placement="top">
-										<i class="icon-glyph-342"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="facebook tips" title="Facebook"  data-placement="top">
-										<i class="icon-glyph-320"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="twitter tips" title="Twitter" data-placement="top">
-										<i class="icon-glyph-339"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="gplus tips" title="Google +" data-placement="top">
-										<i class="icon-glyph-317"></i>
-									</a>
-								</li>
-							</ul>     
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="footer-rights">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<p>Copyright © 2014 <a href="http://www.little-neko.com" target="blank">Little NEKO</a> / All rights reserved.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+        <!-- footer -->
+		@Umbraco.RenderMacro("Footer")
 		<!-- / footer -->
 	</div>
 	<!-- global wrapper -->
 	<!-- End Document ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="/stage/neko-framework/js/jquery/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="/stage/neko-framework/js/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
+	<script type="text/javascript" src="/neko-framework/js/jquery/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/neko-framework/js/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
 	<!-- external framework plugins -->
-	<script type="application/javascript" src="/stage/neko-framework/external-plugins/external-plugins.min.js"></script>
+	<script type="application/javascript" src="/neko-framework/external-plugins/external-plugins.min.js"></script>
 	<!-- neko framework script -->
-	<script type="text/javascript" src="/stage/neko-framework/js/neko-framework.js"></script>
+	<script type="text/javascript" src="/neko-framework/js/neko-framework.js"></script>
 	<!-- neko custom script -->	
-	<script src="/stage/js/custom.js"></script>
+	<script src="/js/custom.js"></script>
 </body>
 </html>
 
