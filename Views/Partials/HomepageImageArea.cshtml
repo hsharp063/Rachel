@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+			<!-- parallax -->
+			<section class="parallax fullscreen image-background text-light" data-stellar-background-ratio="0.3" style="background-image('Model.MediaById(Model.image).umbracoFile')">
+				<div class="container v-align-center">
+					<div class="row">
+						<div class="col-md-12 text-center" data-nekoanim="bounceInDown" data-nekodelay="200">
+							<h1 class="large">@Umbraco.Field("centerImageHeader1")</h1>
+							<p class="lead">@Umbraco.Field("centerImageHeader2")
+							</p>
+							<a href='@Umbraco.Field("centerImageButtonLink")' class="btn large default">@Umbraco.Field("centerImageButtonText")</a>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- / parallax -->

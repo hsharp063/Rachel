@@ -1,0 +1,91 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+	var root = Model.AncestorOrSelf(1);
+}
+ <!-- footer -->
+		<footer id="main-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="footer-widget">
+							<h3>From the Blog</h3>
+							<p>@root.footerLeftSideText</p>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="footer-widget">
+							<h3>Instagram</h3>
+							<ul class="list-unstyled works-list">
+								<li>
+									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works1.jpg" alt="works"></a>
+								</li>
+								<li>
+									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works2.jpg" alt="works"></a>
+								</li>
+								<li>
+									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works3.jpg" alt="works"></a>
+								</li>
+								<li>
+									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works4.jpg" alt="works"></a>
+								</li>
+								<li>
+									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works5.jpg" alt="works"></a>
+								</li>
+								<li>
+									<a href="#" class="tips" title="Little Neko work"><img src="images/theme-pics/works/works6.jpg" alt="works"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="footer-widget">
+							<h3>@root.siteName</h3>
+							<address>
+								<p>
+									@root.address <br/>
+									@root.phoneNumber <br>
+									<a href="@root.emailAddress">@root.emailAddress</a>
+								</p>
+							</address>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="footer-widget">
+							<h3>Follow us, we are social</h3>
+							<ul class="social-icons dark-main-color squared medium">
+								<li>
+									<a target="_blank" href="#" class="rss tips" title="Rss"  data-placement="top">
+										<i class="icon-glyph-342"></i>
+									</a>
+								</li>
+								<li>
+									<a target="_blank" href="@root.facebookUrl" class="facebook tips" title="Facebook"  data-placement="top">
+										<i class="icon-glyph-320"></i>
+									</a>
+								</li>
+								<li>
+									<a target="_blank" href="@root.twitterUrl" class="twitter tips" title="Twitter" data-placement="top">
+										<i class="icon-glyph-339"></i>
+									</a>
+								</li>
+								<li>
+									<a target="_blank" href="@root.googlePlusUrl" class="gplus tips" title="Google +" data-placement="top">
+										<i class="icon-glyph-317"></i>
+									</a>
+								</li>
+							</ul>     
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footer-rights">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<p>Copyright &copy; @System.DateTime.Now.Year.ToString() @root.siteName / All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- / footer -->

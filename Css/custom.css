@@ -338,3 +338,10 @@ width:200px;
 	top:auto!important;
 	bottom:0!important;
 }
+
+/***** Custom by Hilary ******/
+a.navbar-brand h1 {
+  color: #772953;
+  text-shadow: 5px 2px 0px rgba(0,0,0,0.25);
+}
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

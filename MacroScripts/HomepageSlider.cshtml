@@ -2,7 +2,7 @@
 @{
 	var picFolder = Model.Children().Where("nodeTypeAlias = \"HomepageTabs\" ").First();	
 	var pics = picFolder.Children();
- 
+	<h2></h2>
 <section class="text-center main-color ">
 <div class="swiper-tab">
 	@if(pics.Count() > 0){
@@ -11,7 +11,8 @@
 		<div class="swiper-wrapper">
 
 		@foreach(var p in pics){
-			<div class="swiper-slide image-background image-@count">
+			var src = Model.MediaById(p.image).umbracoFile;
+			<div class="swiper-slide image-background" style="background-image:url('@src')">
 			<div class="content-slide">
 				<h2>@p.title</h2>
 				<p>@p.longDescription</p>								
