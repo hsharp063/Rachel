@@ -8,18 +8,20 @@
 @using uHelpsy.Helpers
 @inherits UmbracoTemplatePage
 @{
-    // get tags for this post
-    var tags = PostService.Instance.GetTags((IPublishedContent)ViewData["Node"], false).Select(x => x.Key);
+	try{
+		// get tags for this post
+		var tags = PostService.Instance.GetTags((IPublishedContent)ViewData["Node"], false).Select(x => x.Key);
 
-    // display tags
-    if (tags.Any())
-    {
-        <h5 class="uBlogsy_font_style40">@Umbraco.GetDictionaryValue("uBlogsyDicTags")</h5> 
-    }
-    
-    // get landing page
-    var landing = DataService.Instance.GetLanding(Model.Content);
-    @RenderForPost(landing, tags)
+		// display tags
+		if (tags.Any())
+		{
+			<h5 class="uBlogsy_font_style40">@Umbraco.GetDictionaryValue("uBlogsyDicTags")</h5> 
+		}
+		
+		// get landing page
+		var landing = DataService.Instance.GetLanding(Model.Content);
+		@RenderForPost(landing, tags)
+	}catch(Exception ex){}
 }
 
 

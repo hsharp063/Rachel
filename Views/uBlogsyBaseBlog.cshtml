@@ -1,10 +1,10 @@
-@*
+﻿@*
     Base Blog layout. Make this inherit from your base template
 *@
 
 @inherits UmbracoTemplatePage
 @{
-    Layout = "uBlogsyBaseSite.cshtml";
+    Layout = "Main.cshtml";
 }
 
 @section uBlogsyHead
@@ -23,8 +23,6 @@
 
 
 
-@section uBlogsyMain
-{
     <div id="uBlogsy"> 
         <div id="uBlogsy_main">
                
@@ -58,11 +56,8 @@
                 @*archive*@
                 @Html.CachedPartial("uBlogsy/Widgets/uBlogsyWidgetListPostArchive", Model, 6000, false, false, new ViewDataDictionary(ViewData) { { "AltLayout", false } })
 
-                @*list blog roll *@
-                @Html.CachedPartial("uBlogsy/Widgets/uBlogsyWidgetListBlogRoll", Model, 6000, false, false, new ViewDataDictionary(ViewData) { { "ItemLimit", 5 } })
             </aside>
         </div>
         
         @Html.CachedPartial("uBlogsy/Global/uBlogsyGlobalFooter", Model, 0)
     </div>
-}

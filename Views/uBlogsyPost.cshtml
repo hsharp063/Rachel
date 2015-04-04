@@ -1,4 +1,4 @@
-@*
+﻿@*
     Blog post layout.
 *@
 @using uBlogsy.BusinessLogic
@@ -6,7 +6,7 @@
 @using uBlogsy.Common.Extensions
 @inherits UmbracoTemplatePage
 @{
-    Layout = "uBlogsyBaseBlog.cshtml";
+    Layout = "Main.cshtml";
     
     var tag = Request.QueryString["tag"];
     var label = Request.QueryString["label"];
@@ -21,9 +21,18 @@
     var next = PostService.Instance.GetPreviousPost(Model.Content, tag, label, author, searchTerm, commenter, year, month, day);
 }
 	
-@section uBlogsyHead{}
 
-@section uBlogsyLeftCol{
+@section uBlogsyHead
+{
+    @*get meta title and description*@
+    @Html.Partial("uBlogsy/Global/uBlogsyGlobalSeoMeta")
+
+    <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+    <link type="text/css" rel="Stylesheet" media="screen" href="/css/uBlogsy.css" />
+}
+
+
     @*render the post*@
     <div class="uBlogsy_post_container">
         @*pagination*@
@@ -62,4 +71,3 @@
     {
         @Html.Action("Index", "uCommentsyContactFormSurface", new { CurrentPage })
     }catch(Exception){}
-}

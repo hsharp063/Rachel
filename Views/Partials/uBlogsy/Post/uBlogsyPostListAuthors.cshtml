@@ -7,12 +7,14 @@
 @using uBlogsy.BusinessLogic;
 @inherits UmbracoTemplatePage
 @{
+	try{
     var node = (IPublishedContent)ViewData["Node"] ?? Model.Content;
     var landing = DataService.Instance.GetLanding(Model.Content);
     var gravatarSize = (int)ViewData["GravatarSize"];
     var authors = PostService.Instance.GetAuthors(node, false).ToList(); 
     
     @RenderForPost(landing, authors, gravatarSize, node.GetPropertyValue<DateTime>("uBlogsyPostDate"))
+	}catch(Exception ex){}
 }
 
 
