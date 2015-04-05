@@ -1,0 +1,23 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+	var imgSrc = "";
+	if(Model.HasValue("mainImage")){
+		imgSrc = Model.MediaById(Model.GetPropertyValue("mainImage")).umbracoFile;
+	}
+			<header class="page-header x-large image-background dark-color center no-padding parallax" data-stellar-background-ratio="0.3" style="background-image:url('@imgSrc')">
+				<div class="mask opacity-2">
+
+					<div class="container v-align-center">
+						<div class="row">
+							<div class="col-md-12 text-light">
+								<h1 class="x-large block">@Model.uBlogsyContentTitle</h1>
+								<p class="lead">
+									@Model.subTitle
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</header>
+}

@@ -1,25 +1,35 @@
-@*
+﻿@*
     Landing layout.
 *@
 @inherits UmbracoTemplatePage
 @{
-    Layout = "uBlogsyBaseBlog.cshtml";
+    Layout = "Main.cshtml";
 }
 
 @section uBlogsyHead{}
+		<main id="content">
+
+			@Umbraco.RenderMacro("BlogLandingImage")
+
+			
+			<section class="pt-medium pb-medium">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
 
 
-@section uBlogsyLeftCol
-{
-    <div class="uBlogsy_content_body">
         @if (Request.QueryString.Count == 0)
         {
             @Umbraco.Field("uBlogsyContentBody")
         }
-    </div>
-  
-    @*list posts*@
-    <section class="uBlogsy_posts_container">
+
+
 		@Html.CachedPartial("uBlogsy/Landing/uBlogsyLandingListPosts", Model, 0, false, false, new ViewDataDictionary(ViewData) { { "ItemsPerPage", 20 } })		
-    </section>	
-}
+						</div>
+
+					</div><!-- row -->
+				</div><!-- container -->
+			</section>
+
+		</main>
